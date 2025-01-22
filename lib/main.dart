@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: HomePage(),
+      home: HomePage(),
       // home: RegistrationPage(),
       //home: GenderPage(),
       //home: DestinationPage(),
       //home: StrikePage(),
-      home: PreviewPage(),
+      //home: PreviewPage(),
     );
   }
 }
