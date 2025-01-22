@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:one_above_tv/Pages/HomePage.dart';
+import 'package:one_above_tv/Pages/StrikePage.dart';
 
 class DestinationPage extends StatefulWidget {
   const DestinationPage({super.key});
@@ -246,11 +248,21 @@ class _DestinationPageState extends State<DestinationPage> {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: screenWidth * 0.22),
-              child: Image.asset(
-                "assets/images/submitButton.png",
-                width: screenWidth * 0.3,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => StrikePage(),
+                  ),
+                );
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: screenWidth * 0.22),
+                child: Image.asset(
+                  "assets/images/submitButton.png",
+                  width: screenWidth * 0.3,
+                ),
               ),
             ),
             Container(
@@ -261,13 +273,28 @@ class _DestinationPageState extends State<DestinationPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(
-                    "assets/images/backButton-2.png",
-                    width: screenWidth * 0.2,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      "assets/images/backButton-2.png",
+                      width: screenWidth * 0.2,
+                    ),
                   ),
-                  Image.asset(
-                    "assets/images/homeButton-2.png",
-                    width: screenWidth * 0.2,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                          (Route<dynamic> route) => false);
+                    },
+                    child: Image.asset(
+                      "assets/images/homeButton-2.png",
+                      width: screenWidth * 0.2,
+                    ),
                   )
                 ],
               ),

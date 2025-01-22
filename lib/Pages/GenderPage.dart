@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_above_tv/Pages/HomePage.dart';
 
 class GenderPage extends StatefulWidget {
   const GenderPage({super.key});
@@ -106,13 +107,28 @@ class _GenderPageState extends State<GenderPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(
-                    "assets/images/backButton-2.png",
-                    width: screenWidth * 0.2,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      "assets/images/backButton-2.png",
+                      width: screenWidth * 0.2,
+                    ),
                   ),
-                  Image.asset(
-                    "assets/images/homeButton-2.png",
-                    width: screenWidth * 0.2,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                          (Route<dynamic> route) => false);
+                    },
+                    child: Image.asset(
+                      "assets/images/homeButton-2.png",
+                      width: screenWidth * 0.2,
+                    ),
                   ),
                 ],
               ),

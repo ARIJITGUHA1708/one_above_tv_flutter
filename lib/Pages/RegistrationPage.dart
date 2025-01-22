@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:one_above_tv/Pages/GenderPage.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -318,9 +319,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       "assets/images/submitButtonFaded.png",
                       width: screenWidth * 0.3,
                     )
-                  : Image.asset(
-                      "assets/images/submitButton.png",
-                      width: screenWidth * 0.3,
+                  : GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => GenderPage(),
+                          ),
+                        );
+                      },
+                      child: Image.asset(
+                        "assets/images/submitButton.png",
+                        width: screenWidth * 0.3,
+                      ),
                     ),
             ),
             Container(
@@ -329,9 +340,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image.asset(
-                    "assets/images/homeButton-2.png",
-                    width: screenWidth * 0.22,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      "assets/images/homeButton-2.png",
+                      width: screenWidth * 0.22,
+                    ),
                   )
                 ],
               ),

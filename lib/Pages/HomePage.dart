@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_above_tv/Pages/RegistrationPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,7 +28,12 @@ class HomePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => ,),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RegistrationPage(),
+                  ),
+                );
               },
               child: Container(
                 margin: EdgeInsets.only(top: screenWidth * 0.05),
